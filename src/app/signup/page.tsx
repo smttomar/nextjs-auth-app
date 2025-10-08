@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function signup() {
     const router = useRouter();
@@ -51,6 +52,7 @@ export default function signup() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-neutral-900">
             <Toaster />
+            <ThemeToggle />
             <div className="gap-5 flex flex-col w-full max-w-md bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-lg outline-1">
                 <h2 className="text-3xl font-bold text-center text-black dark:text-white">
                     {loading ? "Processing..." : "SignUp"}
@@ -62,7 +64,7 @@ export default function signup() {
                 <div className="space-y-4">
                     <label
                         htmlFor="email"
-                        className="text-sm font-medium text-gray-200"
+                        className="text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         Email Address
                     </label>
@@ -79,7 +81,7 @@ export default function signup() {
                     />
                     <label
                         htmlFor="password"
-                        className="text-sm font-medium text-gray-200"
+                        className="text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         Password
                     </label>
@@ -95,7 +97,7 @@ export default function signup() {
                     />
                     <label
                         htmlFor="username"
-                        className="text-sm font-medium text-gray-200"
+                        className="text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         Username
                     </label>
@@ -111,7 +113,7 @@ export default function signup() {
                     />
                     <button
                         type="submit"
-                        className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition disabled:cursor-not-allowed disabled:hover:bg-gray-600"
+                        className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition disabled:cursor-not-allowed disabled:hover:bg-gray-600 hover:cursor-pointer"
                         onClick={onSignup}
                         disabled={buttonDisabled}
                     >
@@ -120,7 +122,7 @@ export default function signup() {
                     <div className="flex">
                         <Link
                             href="/login"
-                            className="text-sm underline hover:text-blue-400 ml-auto"
+                            className="text-sm underline hover:text-blue-400 ml-auto text-gray-700 dark:text-gray-200"
                         >
                             Login &rarr;
                         </Link>

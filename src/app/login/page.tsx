@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function LoginPage() {
     const router = useRouter();
@@ -40,18 +41,19 @@ export default function LoginPage() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-neutral-900">
             <Toaster />
+            <ThemeToggle />
             <div className="flex flex-col gap-5 w-full max-w-md bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-lg outline-1">
                 <h2 className="text-3xl font-bold text-center text-black dark:text-white">
                     {loading ? "Processing..." : "Login"}
                 </h2>
-                <p className="text-gray-400 text-center text-sm">
+                <p className="text-gray-500 dark:text-gray-400 text-center text-sm">
                     Enter your email/username and password.
                 </p>
                 <hr className="w-full border-gray-700" />
                 <div className="space-y-4">
                     <label
                         htmlFor="identifier"
-                        className="text-sm font-medium text-gray-200"
+                        className="text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         Email / Username
                     </label>
@@ -68,7 +70,7 @@ export default function LoginPage() {
                     />
                     <label
                         htmlFor="password"
-                        className="text-sm font-medium text-gray-200"
+                        className="text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         Password
                     </label>
@@ -84,7 +86,7 @@ export default function LoginPage() {
                     />
                     <button
                         type="submit"
-                        className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition disabled:cursor-not-allowed disabled:hover:bg-gray-600"
+                        className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition disabled:cursor-not-allowed disabled:hover:bg-gray-600 hover:cursor-pointer"
                         onClick={onLogin}
                         disabled={buttonDisabled}
                     >
@@ -93,13 +95,13 @@ export default function LoginPage() {
                     <div className="flex">
                         <Link
                             href="/signup"
-                            className="text-sm underline hover:text-blue-400 mr-auto"
+                            className="text-sm underline hover:text-blue-400 mr-auto text-gray-700 dark:text-gray-200"
                         >
                             &larr; Sign Up
                         </Link>
                         <Link
                             href="/forgotpassword"
-                            className="text-sm underline hover:text-blue-400 ml-auto"
+                            className="text-sm underline hover:text-blue-400 ml-auto text-gray-700 dark:text-gray-200"
                         >
                             Forgot password? &rarr;
                         </Link>

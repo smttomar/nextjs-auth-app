@@ -1,4 +1,5 @@
 "use client";
+import ThemeToggle from "@/components/ThemeToggle";
 import axios from "axios";
 import Link from "next/link";
 import React, { use, useEffect, useState } from "react";
@@ -42,9 +43,10 @@ export default function UserProfile({
     }, [params.id]);
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen bg-neutral-900 px-4">
+        <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100 dark:bg-neutral-900 px-4 text-black dark:text-white">
             <Toaster />
-            <div className="border-1 border-white p-8 flex flex-col items-center gap-5 rounded-lg shadow-lg bg-neutral-800 w-full max-w-md">
+            <ThemeToggle />
+            <div className="border-1 border-white p-8 flex flex-col items-center gap-5 rounded-lg shadow-lg bg-white dark:bg-neutral-800 w-full max-w-md">
                 <h1 className="text-4xl font-bold">User Profile</h1>
                 <p className="text-gray-400 -mt-2">Public view</p>
                 <hr className="w-full border-gray-500" />

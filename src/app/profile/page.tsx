@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { toast, Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface UserData {
     _id: string;
@@ -47,8 +48,9 @@ export default function ProfilePage() {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen bg-neutral-900 px-4">
-            <div className="border-1 border-white p-8 flex flex-col items-center gap-5 rounded-lg shadow-lg bg-neutral-800 w-full max-w-md">
+        <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100 dark:bg-neutral-900 px-4 text-black dark:text-white">
+            <ThemeToggle />
+            <div className="border-1 border-white p-8 flex flex-col items-center gap-5 rounded-lg shadow-lg bg- bg-white dark:bg-neutral-800 w-full max-w-md">
                 <h1 className="text-4xl font-bold">Your Profile</h1>
                 <hr className="w-full border-gray-500" />
 

@@ -1,4 +1,5 @@
 "use client";
+import ThemeToggle from "@/components/ThemeToggle";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -54,8 +55,9 @@ export default function ResetPasswordPage() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-neutral-900">
             <Toaster />
+            <ThemeToggle />
             <div className="w-full max-w-md gap-5 flex flex-col bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-lg outline-1">
-                <h1 className="text-3xl font-bold text-white text-center">
+                <h1 className="text-3xl font-bold text-black dark:text-white text-center">
                     Reset Your Password
                 </h1>
                 <p className="text-gray-400 text-center text-sm">
@@ -66,7 +68,7 @@ export default function ResetPasswordPage() {
                 <div className="flex flex-col w-full gap-2">
                     <label
                         htmlFor="password"
-                        className="text-sm font-medium text-gray-200"
+                        className="text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         New Password
                     </label>
@@ -87,7 +89,7 @@ export default function ResetPasswordPage() {
                 <div className="flex flex-col w-full gap-2">
                     <label
                         htmlFor="confirmPassword"
-                        className="text-sm font-medium text-gray-200"
+                        className="text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         Confirm New Password
                     </label>

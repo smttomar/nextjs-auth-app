@@ -1,5 +1,6 @@
 "use client";
 
+import ThemeToggle from "@/components/ThemeToggle";
 import axios from "axios";
 import Link from "next/link";
 import React, { useState, useMemo } from "react";
@@ -35,8 +36,9 @@ export default function ForgotPasswordEmailPage() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-neutral-900">
             <Toaster />
+            <ThemeToggle />
             <div className="flex flex-col gap-5 w-full max-w-md bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-lg outline-1">
-                <h1 className="text-3xl font-bold text-white text-center">
+                <h1 className="text-3xl font-bold text-black dark:text-white text-center">
                     Forgot Your Password?
                 </h1>
                 <p className="text-gray-400 text-center text-sm">
@@ -48,7 +50,7 @@ export default function ForgotPasswordEmailPage() {
                 <div className="flex flex-col w-full gap-2">
                     <label
                         htmlFor="email"
-                        className="text-sm font-medium text-gray-200"
+                        className="text-sm font-medium text-gray-700 dark:text-gray-200"
                     >
                         Email Address
                     </label>
@@ -73,7 +75,7 @@ export default function ForgotPasswordEmailPage() {
 
                 <Link
                     href="/login"
-                    className="text-sm hover:text-blue-400 hover:underline"
+                    className="text-sm hover:text-blue-400 hover:underline text-gray-700 dark:text-gray-200"
                 >
                     &larr; Back to Login
                 </Link>

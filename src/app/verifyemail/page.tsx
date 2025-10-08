@@ -35,17 +35,17 @@ export default function VerifyEmailPage() {
         <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-neutral-900">
             <Toaster />
             <div className="w-full max-w-md bg-white text-center dark:bg-neutral-800 p-8 rounded-2xl shadow-lg">
-                <h1 className="text-3xl font-bold mb-4">
+                <h1 className="text-3xl font-bold mb-4 text-black dark:text-white">
                     {token ? "Email Verified" : "Verify Email"}
                 </h1>
-                <h2 className="p-1 text-l font-bold bg-neutral-500 text-white mb-4 rounded-3xl ">
+                <h2 className="p-1 text-l font-bold dark:bg-neutral-500 bg-neutral-300 text-black dark:text-white mb-4 rounded-3xl ">
                     {token
                         ? `"Email verification was successful."`
                         : `"A verification email has been sent to your registered email address."`}
                 </h2>
 
                 {verified && (
-                    <div className="underline hover:text-blue-400 text-xl">
+                    <div className="underline hover:text-blue-400 text-xl text-gray-700 dark:text-gray-200">
                         <Link href="/login">Login</Link>
                     </div>
                 )}
@@ -57,7 +57,7 @@ export default function VerifyEmailPage() {
                             log in directly and verify your email.
                         </p>
                         <Link
-                            className="underline hover:text-blue-400 text-xl"
+                            className="underline hover:text-blue-400 text-xl text-gray-700 dark:text-gray-200"
                             href="/login"
                         >
                             Login
