@@ -22,6 +22,10 @@ export default function signup() {
             toast.error("Password must be at least 6 characters long.");
         }
         try {
+            if (user.username.includes(" ")) {
+                toast.error("Username cannot contain spaces");
+                return;
+            }
             setLoading(true);
             const response = await axios.post("/api/users/signup", user);
             console.log("Signup successfull", response.data);

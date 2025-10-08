@@ -9,8 +9,14 @@ connect();
 export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json();
-        const { email, password } = reqBody;
-        const user = await User.findOne({ email });
+        const { identifier, password } = reqBody;
+
+        const query = identifier.includes("@")
+            ? { email: identifier }
+            : { username: identifier };
+
+        const user = await User.findOne(query);
+
         if (!user) {
             return NextResponse.json(
                 {

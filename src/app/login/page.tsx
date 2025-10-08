@@ -8,7 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 export default function LoginPage() {
     const router = useRouter();
     const [user, setUser] = React.useState({
-        email: "",
+        identifier: "",
         password: "",
     });
 
@@ -31,7 +31,7 @@ export default function LoginPage() {
     };
 
     useEffect(() => {
-        if (user.email.length > 0 && user.password.length > 0) {
+        if (user.identifier.length > 0 && user.password.length > 0) {
             setButtonDisabled(false);
         } else {
             setButtonDisabled(true);
@@ -45,24 +45,24 @@ export default function LoginPage() {
                     {loading ? "Processing..." : "Login"}
                 </h2>
                 <p className="text-gray-400 text-center text-sm">
-                    Enter your email and password.
+                    Enter your email/username and password.
                 </p>
                 <hr className="w-full border-gray-700" />
                 <div className="space-y-4">
                     <label
-                        htmlFor="email"
+                        htmlFor="identifier"
                         className="text-sm font-medium text-gray-200"
                     >
-                        Email Address
+                        Email / Username
                     </label>
                     <input
-                        type="you@example.com"
-                        placeholder="Email"
+                        type="text"
+                        placeholder="Enter email or username"
                         className="w-full p-3 border text-black dark:text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500
                          hover:ring-1 hover:ring-blue-600 "
-                        value={user.email}
+                        value={user.identifier}
                         onChange={(e) =>
-                            setUser({ ...user, email: e.target.value })
+                            setUser({ ...user, identifier: e.target.value })
                         }
                         required
                     />
